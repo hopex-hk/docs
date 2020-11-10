@@ -840,8 +840,8 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
 |Authorization|String|yes|User Information Verification, Request Header|
 |Date|String|yes|Current GMT Time, Request Header|
 |Digest|String|yes|Request for Package Summary, Request Header|
-|contractCodeList|[]|yes|Contract List, Being blank to search all contracts, Request Body|
-|typeList|[]|yes|1.Limit Price to Open 2.Market Price to Open 3.Limit Price to Close 4.Market Price to Close 5.Limit Price Close Partially Complete 6.Market Price Close Partially Complete, Request Body
+|contractCodeList|String[]|yes|Contract List, Being blank to search all contracts, Request Body|
+|typeList|int[]|yes|1.Limit Price to Open 2.Market Price to Open 3.Limit Price to Close 4.Market Price to Close 5.Limit Price Close Partially Complete 6.Market Price Close Partially Complete, Request Body
 |side|int|yes|0:no limit 1 for sell, 2 for buy, Request Body|
 |startTime|int|yes|Start Time Stamp, Request Body|
 |endTime|int|yes|End Time Stamp, Request Body|
@@ -1111,10 +1111,10 @@ GET https://api2.hopex.com/api/v1/position
 |Authorization|String|yes|User Information Verification, Request Header|
 |Date|String|yes|Current GMT Time, Request Header|
 |Digest|String|yes|Request for Package Summary, Request Header|
-|contractCodeList|[]|no|Contract List, Being blank to search all contracts, Request Body|
-|taskTypeList|[]|no|1:Buy Long, 2:Sell Short, 3:Buy to Close Short, 4:Sell to Close Long, Being blank to search all, Request Body|
-|trigTypeList|[]|no|1:Market Price 2:Faire Price,Being blank to search all, Request Body|
-|taskStatusList|[]|no|1: Untriggered 2.Canceled 3.Order Submitted 4.Trigger failed, Being blank to search all, Request Body|
+|contractCodeList|String[]|no|Contract List, Being blank to search all contracts, Request Body|
+|taskTypeList|int[]|no|1:Buy Long, 2:Sell Short, 3:Buy to Close Short, 4:Sell to Close Long, Being blank to search all, Request Body|
+|trigTypeList|int[]|no|1:Market Price 2:Faire Price,Being blank to search all, Request Body|
+|taskStatusList|int[]|no|1: Untriggered 2.Canceled 3.Order Submitted 4.Trigger failed, Being blank to search all, Request Body|
 |direct|int|yes|1 LONG,2 SHORT,0:search all|
 |side|int|yes|Buy or Sell, 1:Sell 2Buy,0:search all|
 |startTime|number|yes|0:search all,Start Time Stamp(Unit microsecond)|
@@ -1557,7 +1557,7 @@ curl "https://api2.hopex.com/api/v1/set_leverage?contractCode=BTCUSDT&direct=2&l
 |Authorization|String|yes|User Information Verification, Request Header|
 |Date|String|yes|Current GMT Time, Request Header|
 |Digest|String|yes|Request for Package Summary, Request Header|
-|contractCodeList|[]|yes|Contract List, leave it black to search all contracts|
+|contractCodeList|String[]|yes|Contract List, leave it black to search all contracts|
 |side|int|yes|0:no limit 1 for sell, 2 for buy.|
 |page|int|yes|Page No., Default 1|
 
