@@ -62,8 +62,23 @@ under the License.
         <%= image_tag('navbar.png') %>
       </span>
     </a>
+    <header>
+      <div class="flex_box">
+        <%= image_tag "logo_v1.png", class: 'logo' %>
+        <div class="nav_box">
+          <span class="nav_cell" style="display: none">
+            <a href="javascript:;" class="nav_first">v1<i class="icon_nav"></i></a>
+            <ul class="nav_ul">
+              <li>
+                <a href="/docs/contract/v1/en/" id="v1_url">v1</a>
+              </li>
+            </ul>
+          </span>
+        </div>
+      </div>
+      <a href="/docs/contract/v1/cn/" class="lang" id="lang_box">简体中文</a>
+    </header>
     <div class="toc-wrapper">
-      <%= image_tag "logo.png", class: 'logo' %>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>
@@ -124,5 +139,45 @@ under the License.
         <% end %>
       </div>
     </div>
+    <script>
+      const lang_btn = document.getElementById('lang_box');
+     
+      const v1_url = document.getElementById('v1_url');
+      const url = GetUrlRelativePath();
+
+      if(url.indexOf('cn') != -1){
+        //如果是中文环境
+        lang_btn.innerHTML = 'English';
+       
+        lang_btn.href = url.replace('cn/', 'en/');
+     
+        v1_url.href = '/docs/contract/v1/cn/';
+      }else{
+        //如果是英文环境
+        lang_btn.innerHTML = '中文';
+        
+        lang_btn.href = url.replace('en/', 'cn/');
+        
+        v1_url.href = '/docs/contract/v1/en/';
+      }
+
+     
+      //显示语言切换按钮
+      lang_btn.style.display = 'block';
+      function GetUrlRelativePath(){
+        let url = document.location.toString();
+        let arrUrl = url.split("//");
+        let start = arrUrl[1].indexOf("/");
+        let relUrl = arrUrl[1].substring(start);
+        if(relUrl.indexOf("?") != -1){
+          relUrl = relUrl.split("?")[0];
+        }
+        if(relUrl.indexOf("#") != -1){
+          relUrl = relUrl.split("#")[0];
+        }
+        return relUrl;
+  　　}
+    </script>
+
   </body>
 </html>
