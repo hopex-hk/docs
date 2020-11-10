@@ -167,33 +167,34 @@ curl "https://api2.hopex.com/api/v1/ticker?contractCode=BTCUSDT"
 
 ```json
 {
-  "data": {
-    "contractCode": "BTCUSDT",
-    "spotIndexCode": "spot_index_BTCUSDT",
-    "fairPriceCode": "fair_price_BTCUSDT",
-    "contractName": "BTC/USDT永续",
-    "closeCurrency": "USDT",
-    "allowTrade": true,
-    "pause": false,
-    "lastPrice": "-3520.0",
-    "lastPriceToUSD": "$3522.11",
-    "lastPriceLegal": "$3522.11",
-    "changePercent24": "-0.21%",
-    "marketPrice": "3518.86",
-    "marketPriceInfo": "全球top10成交量交易所均价",
-    "fairPrice": "3519.05",
-    "fairePriceInfo": "合理价格=现货价格+最近15秒成交溢价,此价格可以更加合理地代表Hopex合约价格。浮动盈亏和强平价格均是根据合理价格来计算。",
-    "price24Max": "3551.5",
-    "price24Min": "3494.5",
-    "amount24h": "3,735,255 USDT",
-    "lastPriceToCNY": "￥26242.47",
-    "quantity24h": "13,736,960"
-  },
-  "ret": 0,
-  "env": 0,
-  "errCode": null,
-  "errStr": null,  
-  "timestamp": 1548150572035
+	"data": {
+		"contractCode": "BTCUSDT",
+		"spotIndexCode": "spot_index_BTCUSDT",
+		"fairPriceCode": "fair_price_BTCUSDT",
+		"contractName": "BTC/USDT永续",
+		"closeCurrency": "USDT",
+		"allowTrade": true,
+		"pause": false,
+		"lastPrice": "-15372.0",
+		"lastPriceToUSD": "$15380.45",
+		"lastPriceLegal": "$15380.45",
+		"changePercent24": "-0.54%",
+		"marketPrice": "15373.85",
+		"marketPriceInfo": "全球top10成交量交易所均价",
+		"fairPrice": "15372.95",
+		"fairePriceInfo": "合理价格 = 现货价格 + 最近10秒盘口中间价溢价，此价格可以更加合理地代表Hopex合约价格。强平触发价格是根据合理价格来计算。",
+		"price24Max": "15837.5",
+		"price24Min": "14812.5",
+		"amount24h": "860,725,245 USDT",
+		"lastPriceToCNY": "￥101665.57",
+		"quantity24h": "562031757",
+		"fundRate": "+0.0015%"
+	},
+	"ret": 0,
+	"errCode": null,
+	"errStr": null,
+	"env": 0,
+	"timestamp": 1605003242400
 }
 ```
 
@@ -221,6 +222,7 @@ curl "https://api2.hopex.com/api/v1/ticker?contractCode=BTCUSDT"
 |amount24h|String|24小时交易额|
 |lastPriceToCNY|String|最新价To CNY|
 |quantity24h|String|24小时交易量|
+|fundRate|String|资金费率|
 
 ## 获取Hopex合约深度信息
 
@@ -252,24 +254,24 @@ curl "https://api2.hopex.com/api/v1/ticker?contractCode=BTCUSDT"
     "intervals": [
       "0.5"
     ],
-    "asksFilter": "3545.9",
+	"asksFilter": "15540.1",
     "asks": [
       {
-        "priceD": 3511,
-        "orderPrice": "3511.0",
-        "orderQuantity": 28701,
-        "orderQuantityShow": "28,701",
+        "priceD": 15386.5000000000000000,
+        "orderPrice": "15386.5",
+        "orderQuantity": 29943,
+        "orderQuantityShow": "29,943",
         "exist": 0
       },
       // ...
     ],
-    "bidsFilter": "3475.6",
+    "bidsFilter": "15232.4",
     "bids": [
       {
-        "priceD": 3510.5,
-        "orderPrice": "3510.5",
-        "orderQuantity": 14619,
-        "orderQuantityShow": "14,619",
+        "priceD": 15386.0000000000000000,
+        "orderPrice": "15386.0",
+        "orderQuantity": 33771,
+        "orderQuantityShow": "33,771",
         "exist": 0
       },
       // ...
@@ -279,7 +281,7 @@ curl "https://api2.hopex.com/api/v1/ticker?contractCode=BTCUSDT"
   "env": 0,
   "errCode": null,
   "errStr": null,  
-  "timestamp": 1548156640871
+  "timestamp": 1605003762065
  }    
 ```
 
@@ -320,20 +322,20 @@ curl "https://api2.hopex.com/api/v1/trades?contractCode=BTCUSDT&pageSize=1"
 ```json
 {
   "data": [
-    {
-      "id": 3102886,
-      "time": "19:45:20",
-      "timestamp": 1573540239.530246,      
-      "fillPrice": "3504.0",
-      "fillQuantity": "1,603",
-      "side": "1"
-    }
+	{
+		"id": 538701017,
+		"time": "18:19:04",
+		"timestamp": 1605003544.5175519,
+		"fillPrice": "15388.5",
+		"fillQuantity": "3,100",
+		"side": "2"
+	}
   ],
   "ret": 0,
   "env": 0,
   "errCode": null,
   "errStr": null,  
-  "timestamp": 1548157523524
+  "timestamp": 1605003762065
 }
 ```
 
@@ -353,7 +355,7 @@ curl "https://api2.hopex.com/api/v1/trades?contractCode=BTCUSDT&pageSize=1"
 > Request:
 
 ```json
-curl "https://api2.hopex.com/api/v1/kline?contractCode=BTCUSDT&endTime=1603881210&startTime=1603814400&interval=1m"
+curl "https://api2.hopex.com/api/v1/kline?contractCode=BTCUSDT&endTime=1604937600&startTime=1601481600&interval=1d"
 (最多只能获取1000根K线数据)
 ```
 
@@ -378,20 +380,20 @@ GET
     "data": {
         "decimalplace": "1",
         "timeData": [
-            {
-                "time": 1561223880,
-                "open": "10901.0",
-                "close": "10876.5",
-                "high": "10901.0",
-                "low": "10867.5",
-                "vol": "194911",
-                "val": "424098.559",
-                "prevClose": "0.0",
-                "upDown": "-24.50",
-                "upDownRate": "-0.22%",
-                "direct": 1,
-                "contractValue": "0.0001"
-            },
+			{
+				"time": 1601481600,
+				"open": "10773.5",
+				"close": "10710.0",
+				"high": "10915.0",
+				"low": "10679.0",
+				"vol": "309147297",
+				"val": "668218402.577",
+				"prevClose": "0.0",
+				"upDown": "-63.50",
+				"upDownRate": "-0.59%",
+				"direct": 1,
+				"contractValue": "0.0001"
+			},
            //...
         ]
     },
@@ -399,7 +401,7 @@ GET
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1561343966013
+    "timestamp": 1605003708055
 }
 ```
 
@@ -435,29 +437,29 @@ curl "https://api2.hopex.com/api/v1/markets"
 ```json
 {
     "data": [
-        {
-            "contractCode": "BTCUSDT",
-            "contractName": "BTC/USDT永续",
-            "allowTrade": true,
-            "hasPosition": false,
-            "closeCurrency": "USDT",
-            "quotedCurrency": "USDT",
-            "precision": 2,
-            "minPriceMovement": 0.5,
-            "pricePrecision": 1,
-            "lastestPrice": 3904.5,
-            "changePercent24h": -0.00153433064825469888761028,
-            "sumAmount24h": 7354.4393639723098773,
-            "sumAmount24hUSDT": 75235914.6934367300447790,
-            "posVauleUSD": "234,406,032.14"
-        },
+		{
+			"sumAmount24hUSDT": 858243559.13565,
+			"posVauleUSD": "18,377,012.65",
+			"contractCode": "BTCUSDT",
+			"contractName": "BTC/USDT永续",
+			"allowTrade": true,
+			"hasPosition": false,
+			"closeCurrency": "USDT",
+			"quotedCurrency": "USDT",
+			"precision": 2,
+			"minPriceMovement": 0.5,
+			"pricePrecision": 1,
+			"lastestPrice": 15383,
+			"changePercent24h": -0.0037239726692788445970013924,
+			"sumAmount24h": 858243559.13565
+		},
         //...
    ],
   "ret": 0,
   "env": 0,
   "errCode": null,
   "errStr": null,  
-  "timestamp": 1548160685910
+  "timestamp": 1605003708055
 }
 ```
 
@@ -494,22 +496,22 @@ curl "https://api2.hopex.com/api/v1/indexStat"
 
 ```json
 {
-  "data": {
-        "posVauleUSD": "568,467,422.95",
-        "posVauleCNY": "3,943,771,170.06",
-        "amount24hUSD": "1,504,196,973.56",
-        "amount24hCNY": "10,435,441,713.95",
-        "amount7dayUSD": "12,702,202,974.38",
-        "amount7dayCNY": "88,122,168,244.92",
-        "userCount": "527,670",
-        "dealCountUSD": "1,765,475,066,609.42",
-        "dealCountCNY": "12,248,071,548,356.19"
+    "data": {
+        "posVauleUSD": "59,286,816.15",
+        "posVauleCNY": "391,888,819.10",
+        "amount24hUSD": "1,746,396,458.63",
+        "amount24hCNY": "11,543,767,911.36",
+        "amount7dayUSD": "11,595,850,460.39",
+        "amount7dayCNY": "76,649,151,335.70",
+        "userCount": "571,659",
+        "dealCountUSD": "3,513,204,767,581.79",
+        "dealCountCNY": "23,222,459,173,954.00"
     },
     "ret": 0,
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1583300598281
+    "timestamp": 1605004042855
 }
 ```
 
@@ -550,23 +552,34 @@ curl "https://api2.hopex.com/api/v1/index_notify?page=1&limit=5&culture=zh-CN"
 ```json
 {
     "data": {
-        "totalCount": 42,
+        "totalCount": 105,
         "page": 1,
         "pageSize": 5,
-        "result": [{
-            "id": 131,
-            "title": "3月10日升级优化完成公告",
-            "link": "https://h5.hopex.com/notify/index.html?id=131",
-            "lastModifiedTime": "2020-03-10 11:32:09",
-            "time": "2020-03-10",
-            "timestamp": 1583811129
-        }]
+        "result": [ 
+        	{
+                "id": 214,
+                "title": "【重要】关于支持BCH/USDT分叉的相关通知",
+                "link": "https://h5.nineand.cn/notify/index.html?id=214",
+                "lastModifiedTime": "2020-11-04 19:54:31",
+                "time": "2020-11-04",
+                "timestamp": 1604490871
+            },
+            {
+                "id": 211,
+                "title": "【活动】Hopex两周年“薅羊毛”攻略来咯！",
+                "link": "https://h5.nineand.cn/notify/index.html?id=211",
+                "lastModifiedTime": "2020-11-03 17:26:57",
+                "time": "2020-11-03",
+                "timestamp": 1604395617
+            }
+            //...
+        ]
     },
     "ret": 0,
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1583997209048
+    "timestamp": 1605004071676
 }
 ```
 
@@ -606,11 +619,10 @@ curl "https://api2.hopex.com/api/v1/userinfo"
 ```json
 {
     "data": {
+		"conversionCurrency": "USD",
         "profitRate": "0.00%",
-        "totalWealth": "0.00",
-        "totalWealthUSD":"0.00",
+        "totalWealth": "1506.05",
         "floatProfit": "0.00",
-        "floatProfitUSD": "0.00",
         "position": 0,
         "activeOrder": 0
     },
@@ -626,11 +638,10 @@ curl "https://api2.hopex.com/api/v1/userinfo"
 
 |参数名| 参数类型| 描述|
 | :-----    | :-----   | :-----    |
+|conversionCurrency|String| 计价货币|
 |profitRate|String| 当前持仓收益率(浮动盈亏/持仓占用保证金)|
-|totalWealth|String| 账户总权益估值(BTC)|
-|totalWealthUSD|String| 账户总权益估值(USD)|
-|floatProfit|String| 总浮动盈亏估值(BTC)|
-|floatProfitUSD|String| 总浮动盈亏估值(USD)|
+|totalWealth|String| 账户总权益估值(计价货币)|
+|floatProfit|String| 总浮动盈亏估值(计价货币)|
 |position|int| 持仓数|
 |activeOrder|int| 活跃委托数|
 
@@ -645,7 +656,7 @@ curl "https://api2.hopex.com/api/v1/userinfo"
     "contractCode": "BTCUSDT",
     "side": 2,
     "orderQuantity": 100,
-    "orderPrice": 5255.5
+    "orderPrice": 15020.5
   }
 }
 ```
@@ -672,7 +683,7 @@ curl "https://api2.hopex.com/api/v1/userinfo"
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1555559102763
+    "timestamp": 1605004071676
 }
 ```
 
@@ -712,7 +723,7 @@ curl "https://api2.hopex.com/api/v1/cancel_order?orderId=1952293255&contractCode
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1555569296445
+    "timestamp": 1605004071676
 }
 ```
 
@@ -749,7 +760,7 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
 {
     "data": [
         {
-            "orderId": 120396444,
+			"orderId": 11223769815,
             "orderType": "买入开多",
             "orderTypeVal": 1,
             "direct": 1,
@@ -758,26 +769,26 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
             "type": "1",
             "side": "2",
             "sideDisplay": "买入",
-            "ctime": "2019-06-26 15:03:09",
-            "mtime": "2019-06-26 15:03:09",
-            "orderQuantity": "+1,000",
-            "leftQuantity": "1,000",
+            "ctime": "2020-11-10 15:21:43",
+            "mtime": "2020-11-10 15:21:43",
+            "orderQuantity": "+1,500",
+            "leftQuantity": "1,500",
             "fillQuantity": "0",
             "orderStatus": "2",
             "orderStatusDisplay": "等待成交",
-            "orderPrice": "12785.5",
+            "orderPrice": "15190.0",
             "leverage": "20.00",
             "fee": "--",
             "avgFillMoney": "--",
-            "orderMargin": "66.4846 USDT",
-            "expireTime": "2019-07-03 15:03:09"
+            "orderMargin": "116.2035 USDT",
+            "expireTime": "2020-11-17 15:21:43"
         }
     ],
     "ret": 0,
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1561532593797
+    "timestamp": 1605004441928
 }   
 ```
 
@@ -856,29 +867,29 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
         "page": 2,
         "pageSize": 10,
         "result": [
-            {
-                "orderId": 1935768402,
+             {
+                "orderId": 11223486806,
                 "contractCode": "BTCUSDT",
                 "contractName": "BTC/USDT永续",
-                "type": "4",
+                "type": "6",
                 "side": "1",
-                "direct": 2,
+                "direct": 1,
                 "sideDisplay": "卖出",
-                "ctime": "2019-04-17 10:55:51",
-                "ftime": "2019-04-17 10:55:51",
-                "orderQuantity": "-100",
-                "fillQuantity": "-100",
+                "ctime": "2020-11-10 15:03:55",
+                "ftime": "2020-11-10 15:03:55",
+                "orderQuantity": "-1,000",
+                "fillQuantity": "-1,000",
                 "orderStatus": "2",
                 "orderStatusDisplay": "完全成交",
                 "orderPrice": "市价",
                 "leverage": "20.00",
-                "fee": "0.0522 USDT",
-                "avgFillMoney": "5219.50",
-                "closePosPNL": "-0.0050 USDT",
-                "timestamp": 1555469751974534,
-                "orderTypeVal" : 2,
-                "orderType": "卖出开空",
-                "cancelReason": "撤销原因"
+                "fee": "0.7650 USDT",
+                "avgFillMoney": "15299.50",
+                "closePosPNL": "+1.6500 USDT",
+                "timestamp": 1604991835266679,
+                "orderTypeVal": 4,
+                "orderType": "卖出平多",
+                "cancelReason": ""
             },
             //...
         ]
@@ -887,7 +898,7 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1555571374944
+    "timestamp": 1605004540319
 }      
 ```
 
@@ -955,17 +966,17 @@ curl "https://api2.hopex.com/api/v1/position"
             "direct": 2,
             "posiDirect": 1,
             "posiDirectD": "持多",
-            "entryPrice": "5261.00",
-            "entryPriceD": 5261,
-            "positionMargin": "2.6831 USDT",
-            "positionMarginD": 2.68311,
-            "liquidationPrice": "5024.02",
+            "entryPrice": "15299.00",
+            "entryPriceD": 15299,
+            "positionMargin": "200.6831 USDT",
+            "positionMarginD": 200.68311,
+            "liquidationPrice": "14229.02",
             "maintMargin": "0.3133 USDT",
             "unrealisedPnl": "-0.0025 USDT",
             "unrealisedPnlPcnt": "-0.09%",
-            "fairPrice": "5260.97",
-            "fairPriceD": 5260.97,
-            "lastPrice": "5260.5",
+            "fairPrice": "15299.97",
+            "fairPriceD": 15299.97,
+            "lastPrice": "15299.5",
             "sequence": 0,
             "rank": 0,
             "minPriceMovement": 0.5,
@@ -982,7 +993,7 @@ curl "https://api2.hopex.com/api/v1/position"
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1555582208144
+    "timestamp": 1605004540319
 }
 ```
 
@@ -1372,7 +1383,7 @@ curl "https://api2.hopex.com/api/v1/wallet"
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1555583462806
+    "timestamp": 1605004744343
 }
 ```
 
@@ -1433,7 +1444,7 @@ curl "https://api2.hopex.com/api/v1/set_leverage?contractCode=BTCUSDT&direct=2&l
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1563010363110
+    "timestamp": 1605004744343
 }
 ```
 
@@ -1472,52 +1483,52 @@ curl "https://api2.hopex.com/api/v1/set_leverage?contractCode=BTCUSDT&direct=2&l
 
 ```json
 {
-  "data": {
-    "contractCode": "BTCUSDT",
-    "contractDirect": "Forward",
-    "contractValue": "0.0001",
-    "valueUnit": "BTC",
-    "closeCurrency": "USDT",
-    "takeRate": null,
-    "userAllowTrade": false,
-    "marketAllowTrade": true,
-    "minPricePrecision": 1,
-    "minPriceMovement": "0.5",
-    "minPriceMovementDisplay": "0.5 USDT",
-    "longMaintenanceMarginRate": "0.005",
-    "longMaintenanceMarginRateDisplay": "0.5%",
-    "shortMaintenanceMarginRate": "0.005",
-    "shortMaintenanceMarginRateDisplay": "0.5%",
-    "minTradeNum": 1,
-    "minTradeNumDisplay": "1张",
-    "availableBalance": null,
-    "availableBalanceDisplay": null,
-    "maxBuyPrice": "7025.5",
-    "minSellPrice": "6616.0",
-    "longMinLeverage": "1.00",
-    "longMaxLeverage": "100.00",
-    "shortMinLeverage": "1.00",
-    "shortMaxLeverage": "100.00",
-    "longDefaultLeverage": "100.00",
-    "shortDefaultLeverage": "100.00",
-    "longLeverage": "100.00",
-    "shortLeverage": "100.00",
-    "openLongMargin": null,
-    "openLongMarginDisplay": null,
-    "openShortMargin": null,
-    "openShortMarginDisplay": null,
-    "openLongAmount": 0,
-    "openShortAmount": 0,
-    "closeLongAmount": 0,
-    "closeShortAmount": 0,
-    "evaluateOrderValue": "0.0000 BTC",
-    "precision": 2
-  },
-  "ret": 0,
-  "errCode": null,
-  "errStr": null,
-  "env": 0,
-  "timestamp": 1586778167221
+    "data": {
+        "contractCode": "BTCUSDT",
+        "contractDirect": "Forward",
+        "contractValue": "0.0001",
+        "valueUnit": "BTC",
+        "closeCurrency": "USDT",
+        "takeRate": "0.0005",
+        "userAllowTrade": true,
+        "marketAllowTrade": true,
+        "minPricePrecision": 1,
+        "minPriceMovement": "0.5",
+        "minPriceMovementDisplay": "0.5 USDT",
+        "longMaintenanceMarginRate": "0.005",
+        "longMaintenanceMarginRateDisplay": "0.5%",
+        "shortMaintenanceMarginRate": "0.005",
+        "shortMaintenanceMarginRateDisplay": "0.5%",
+        "minTradeNum": 1,
+        "minTradeNumDisplay": "1张",
+        "availableBalance": "1389.0207",
+        "availableBalanceDisplay": "1389.0207 USDT",
+        "maxBuyPrice": "15881.0",
+        "minSellPrice": "14956.0",
+        "longMinLeverage": "2.00",
+        "longMaxLeverage": "100.00",
+        "shortMinLeverage": "2.00",
+        "shortMaxLeverage": "100.00",
+        "longDefaultLeverage": "100.00",
+        "shortDefaultLeverage": "100.00",
+        "longLeverage": "20.00",
+        "shortLeverage": "20.00",
+        "openLongMargin": "0.0000",
+        "openLongMarginDisplay": "0.0000 USDT",
+        "openShortMargin": "0.0000",
+        "openShortMarginDisplay": "0.0000 USDT",
+        "openLongAmount": 17663,
+        "openShortAmount": 17663,
+        "closeLongAmount": 0,
+        "closeShortAmount": 0,
+        "evaluateOrderValue": "0.0000 BTC",
+        "precision": 2
+    },
+    "ret": 0,
+    "errCode": null,
+    "errStr": null,
+    "env": 0,
+    "timestamp": 1605004823093
 }
 ```
 
@@ -1564,55 +1575,55 @@ curl "https://api2.hopex.com/api/v1/set_leverage?contractCode=BTCUSDT&direct=2&l
 ```json
 {
     "data": {
-        "totalCount": 7,
+        "totalCount": 11,
         "page": 1,
         "pageSize": 10,
         "result": [
-            {
-                "orderId": 7,
-                "contractCode": "ETHUSDT",
-                "contractName": "ETH/USDT永续",
-                "side": "2",
-                "sideDisplay": "买入",
-                "orderType": "买入平空",
-                "orderTypeVal": 3,
-                "direct": 2,
-                "leverage": "20.00",
-                "orderQuantity": "+70,731",
-                "orderPrice": "194.43",
-                "closePosPNL": "-6545.5086 USDT",
-                "fee": "68.7606 USDT",
-                "ctime": "2019-10-30 14:19:52",
-                "timestamp": 1572416393251656,
-                "direction": 1,
-                "directionDisplay": "空",
-                "positionMargin": "+6614.2692 USDT",
-                "openPrice": "185.17",
-                "liquidationPriceReal": "193.50",
-                "showDetail": false
-            },
-	    	//...
-            {
-                "orderId": 2,
-                "contractCode": "EOSUSDT",
-                "contractName": "EOS/USDT永续",
+             {
+                "orderId": 1284,
+                "contractCode": "BTCUSDT",
+                "contractName": "BTC/USDT永续",
                 "side": "1",
                 "sideDisplay": "卖出",
                 "orderType": "卖出平多",
                 "orderTypeVal": 4,
                 "direct": 1,
                 "leverage": "20.00",
-                "orderQuantity": "-1,123",
-                "orderPrice": "6.4883",
-                "closePosPNL": "-383.6963 USDT",
-                "fee": "3.6432 USDT",
-                "ctime": "2019-06-27 04:44:47",
-                "timestamp": 1561581887104635,
+                "orderQuantity": "-1,000",
+                "orderPrice": "11240.34",
+                "closePosPNL": "-59.1908 USDT",
+                "fee": "0.5620 USDT",
+                "ctime": "2020-08-02 12:39:18",
+                "timestamp": 1596343158162222,
                 "direction": 2,
                 "directionDisplay": "多",
-                "positionMargin": "+387.3395 USDT",
-                "openPrice": "6.8300",
-                "liquidationPriceReal": "6.5567",
+                "positionMargin": "+59.7529 USDT",
+                "openPrice": "11832.25",
+                "liquidationPriceReal": "11299.53",
+                "showDetail": false
+            },
+	    	//...
+            {
+                "orderId": 895,
+                "contractCode": "BCHUSDT",
+                "contractName": "BCH/USDT永续",
+                "side": "2",
+                "sideDisplay": "买入",
+                "orderType": "买入平空",
+                "orderTypeVal": 3,
+                "direct": 2,
+                "leverage": "20.00",
+                "orderQuantity": "+1",
+                "orderPrice": "340.09",
+                "closePosPNL": "-0.1619 USDT",
+                "fee": "0.0017 USDT",
+                "ctime": "2020-03-03 01:12:34",
+                "timestamp": 1583169154872867,
+                "direction": 1,
+                "directionDisplay": "空",
+                "positionMargin": "+0.1636 USDT",
+                "openPrice": "323.90",
+                "liquidationPriceReal": "336.85",
                 "showDetail": false
             }
         ]
@@ -1621,7 +1632,7 @@ curl "https://api2.hopex.com/api/v1/set_leverage?contractCode=BTCUSDT&direct=2&l
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1572501526044
+    "timestamp": 1605004871187
 }
 ```
 
@@ -1680,31 +1691,31 @@ curl "https://api2.hopex.com/api/v1/account_records?page=1&limit=10"
         "pageSize": 10,
         "result": [
             {
-            	"id": 58413,
+                "id": 50705,
                 "asset": "USDT",
-                "orderType": 4,
-                "orderTypeD": "普通链上出金",
-                "amount": "-1900.00000000 USDT",
+                "orderType": 3,
+                "orderTypeD": "普通链上入金",
+                "amount": "+918.83614000 USDT",
                 "rmbAmount": "0.00 CNY",
                 "bankName": "",
-                "addr": "mvYW73ZTo8F7aksBrWad3XvqViqDE3saaP",
+                "addr": "TAH5eVzeTYEDoJHDSYYnbEPpCP6U3jw7fJ",
                 "orderStatus": 1,
                 "orderStatusD": "完成",
-                "createdTime": "2019-10-31 15:52:11"
+                "createdTime": "2020-11-10 16:13:00"
             },
             //...
             {
-            	"id": 58421,
+                "id": 28986,
                 "asset": "USDT",
-                "orderType": 2,
-                "orderTypeD": "OTC出金",
-                "amount": "-100.00000000 USDT",
-                "rmbAmount": "704.00 CNY",
-                "bankName": "邮政",
-                "addr": "",
+                "orderType": 5,
+                "orderTypeD": "内部转账-入金",
+                "amount": "+55.32000000 USDT",
+                "rmbAmount": "0.00 CNY",
+                "bankName": "",
+                "addr": null,
                 "orderStatus": 1,
                 "orderStatusD": "完成",
-                "createdTime": "2019-07-27 15:02:21"
+                "createdTime": "2020-11-10 09:57:18"
             }
         ]
     },
@@ -1712,7 +1723,7 @@ curl "https://api2.hopex.com/api/v1/account_records?page=1&limit=10"
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1572935091833
+    "timestamp": 1605004929900
 }
 ```
 
