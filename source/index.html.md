@@ -839,8 +839,8 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
 |Authorization|String|是|用户信息验证, Request Header|
 |Date|String|是|当前的GMT时间, Request Header|
 |Digest|String|是|请求包体摘要, Request Header|
-|contractCodeList|[]|是|合约列表,为空查询所有, Request Body|
-|typeList|[]|是|1.限价开仓 2.市价开仓 3.限价全平 4.市价全平 5.限价部分平仓单 6.市价部分平仓单, Request Body|
+|contractCodeList|String[]|是|合约列表,为空查询所有, Request Body|
+|typeList|int[]|是|1.限价开仓 2.市价开仓 3.限价全平 4.市价全平 5.限价部分平仓单 6.市价部分平仓单, Request Body|
 |side|int|是|0:no limit 1 for sell, 2 for buy, Request Body|
 |startTime|int|是|开始时间戳, Request Body|
 |endTime|int|是|结束时间戳, Request Body|
@@ -1107,10 +1107,10 @@ curl "https://api2.hopex.com/api/v1/position"
 |Authorization|String|是|用户信息验证, Request Header|
 |Date|String|是|当前的GMT时间, Request Header|
 |Digest|String|是|请求包体摘要, Request Header|
-|contractCodeList|[]|否|合约列表,为空查询所有, Request Body|
-|taskTypeList|[]|否|条件单类别 1.买入开多, 2.卖出开空, 3.买入平空, 4.卖出平多,为空查所有, Request Body|
-|trigTypeList|[]|否|条件单触发类别  1:市场价 2:合理价格 为空查所有, Request Body|
-|taskStatusList|[]|否|条件单状态 1:已创建 2.已撤销 3.已触发委托成功 4.已触发委托失败,为空查所有, Request Body|
+|contractCodeList|String[]|否|合约列表,为空查询所有, Request Body|
+|taskTypeList|int[]|否|条件单类别 1.买入开多, 2.卖出开空, 3.买入平空, 4.卖出平多,为空查所有, Request Body|
+|trigTypeList|int[]|否|条件单触发类别  1:市场价 2:合理价格 为空查所有, Request Body|
+|taskStatusList|int[]|否|条件单状态 1:已创建 2.已撤销 3.已触发委托成功 4.已触发委托失败,为空查所有, Request Body|
 |direct|int|是|1:多仓 2:空仓,0:查询所有|
 |side|int|是|方向1:sell 2:buy,0:查询所有|
 |startTime|number|是|0:查询所有,开始时间戳(单位微秒)|
@@ -1555,7 +1555,7 @@ curl "https://api2.hopex.com/api/v1/set_leverage?contractCode=BTCUSDT&direct=2&l
 |Authorization|String|是|用户信息验证, Request Header|
 |Date|String|是|当前的GMT时间, Request Header|
 |Digest|String|是|请求包体摘要, Request Header|
-|contractCodeList|[]|是|合约列表,为空查询所有|
+|contractCodeList|String[]|是|合约列表,为空查询所有|
 |side|int|是|0:no limit 1 for sell, 2 for buy.|
 |page|int|是|第几页,默认1|
 
