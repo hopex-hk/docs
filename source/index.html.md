@@ -282,7 +282,7 @@ curl "https://api2.hopex.com/api/v1/ticker?contractCode=BTCUSDT"
   "errCode": null,
   "errStr": null,  
   "timestamp": 1605003762065
- }    
+}    
 ```
 
 ### 返回值说明
@@ -322,14 +322,14 @@ curl "https://api2.hopex.com/api/v1/trades?contractCode=BTCUSDT&pageSize=1"
 ```json
 {
   "data": [
-	{
-		"id": 538701017,
-		"time": "18:19:04",
-		"timestamp": 1605003544.5175519,
-		"fillPrice": "15388.5",
-		"fillQuantity": "3,100",
-		"side": "2"
-	}
+  	{
+  		"id": 538701017,
+  		"time": "18:19:04",
+  		"timestamp": 1605003544.5175519,
+  		"fillPrice": "15388.5",
+  		"fillQuantity": "3,100",
+  		"side": "2"
+  	}
   ],
   "ret": 0,
   "env": 0,
@@ -380,21 +380,21 @@ GET
     "data": {
         "decimalplace": "1",
         "timeData": [
-			{
-				"time": 1601481600,
-				"open": "10773.5",
-				"close": "10710.0",
-				"high": "10915.0",
-				"low": "10679.0",
-				"vol": "309147297",
-				"val": "668218402.577",
-				"prevClose": "0.0",
-				"upDown": "-63.50",
-				"upDownRate": "-0.59%",
-				"direct": 1,
-				"contractValue": "0.0001"
-			},
-           //...
+            {
+              "time": 1601481600,
+              "open": "10773.5",
+              "close": "10710.0",
+              "high": "10915.0",
+              "low": "10679.0",
+              "vol": "309147297",
+              "val": "668218402.577",
+              "prevClose": "0.0",
+              "upDown": "-63.50",
+              "upDownRate": "-0.59%",
+              "direct": 1,
+              "contractValue": "0.0001"
+            },
+            //...
         ]
     },
     "ret": 0,
@@ -437,22 +437,22 @@ curl "https://api2.hopex.com/api/v1/markets"
 ```json
 {
     "data": [
-		{
-			"sumAmount24hUSDT": 858243559.13565,
-			"posVauleUSD": "18,377,012.65",
-			"contractCode": "BTCUSDT",
-			"contractName": "BTC/USDT永续",
-			"allowTrade": true,
-			"hasPosition": false,
-			"closeCurrency": "USDT",
-			"quotedCurrency": "USDT",
-			"precision": 2,
-			"minPriceMovement": 0.5,
-			"pricePrecision": 1,
-			"lastestPrice": 15383,
-			"changePercent24h": -0.0037239726692788445970013924,
-			"sumAmount24h": 858243559.13565
-		},
+        {
+          "sumAmount24hUSDT": 858243559.13565,
+          "posVauleUSD": "18,377,012.65",
+          "contractCode": "BTCUSDT",
+          "contractName": "BTC/USDT永续",
+          "allowTrade": true,
+          "hasPosition": false,
+          "closeCurrency": "USDT",
+          "quotedCurrency": "USDT",
+          "precision": 2,
+          "minPriceMovement": 0.5,
+          "pricePrecision": 1,
+          "lastestPrice": 15383,
+          "changePercent24h": -0.0037239726692788445970013924,
+          "sumAmount24h": 858243559.13565
+        },
         //...
    ],
   "ret": 0,
@@ -619,7 +619,7 @@ curl "https://api2.hopex.com/api/v1/userinfo"
 ```json
 {
     "data": {
-		"conversionCurrency": "USD",
+        "conversionCurrency": "USD",
         "profitRate": "0.00%",
         "totalWealth": "1506.05",
         "floatProfit": "0.00",
@@ -630,7 +630,7 @@ curl "https://api2.hopex.com/api/v1/userinfo"
     "errCode": null,
     "errStr": null,
     "env": 0,
-    "timestamp": 1555554824314
+    "timestamp": 1605004071676
 }
 ```
 
@@ -760,7 +760,7 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
 {
     "data": [
         {
-			"orderId": 11223769815,
+            "orderId": 11223769815,
             "orderType": "买入开多",
             "orderTypeVal": 1,
             "direct": 1,
@@ -1162,7 +1162,7 @@ curl "https://api2.hopex.com/api/v1/position"
                 "failureReason": "创建成功",
                 "leverage": "30.00"
             },
-			//...
+			     //...
             {
                 "taskType": 1,
                 "taskTypeD": "买入开多",
@@ -1602,7 +1602,7 @@ curl "https://api2.hopex.com/api/v1/set_leverage?contractCode=BTCUSDT&direct=2&l
                 "liquidationPriceReal": "11299.53",
                 "showDetail": false
             },
-	    	//...
+	    	    //...
             {
                 "orderId": 895,
                 "contractCode": "BCHUSDT",
