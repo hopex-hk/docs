@@ -109,7 +109,7 @@
       if(reg.test(title.text()) || reg.test(body.text())){
         var ref = title.prop('id');
         if(!dict.hasOwnProperty(ref)){
-          res.append({'ref':ref});
+          res.push({'ref':ref});
           dict[ref] = ref;
         }
       }
