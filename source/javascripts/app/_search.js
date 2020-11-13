@@ -70,18 +70,8 @@
     if (event.keyCode === 27) searchInput.value = '';
 
     if (searchInput.value) {
-      var results = []
-      if(/.*[\u4e00-\u9fa5]+.*/.test(searchInput.value)){
-        //中文查询
-        results = chineseSearch(searchInput.value);
 
-      }else{
-        results = index.search(searchInput.value).filter(function(r) {
-          return r.score > 0.0001;
-        });
-      }
-
-      
+      var results = chineseSearch(searchInput.value);  
 
       if (results.length) {
         searchResults.empty();
@@ -111,10 +101,12 @@
   function chineseSearch(searchInputValue){
     var res = [];
     var dict = {};
+    var reg = new RegExp(searchInputValue,"gi");
     $('h1, h2').each(function() {
       var title = $(this);
       var body = title.nextUntil('h1, h2');
-      if(title.text().indexOf(searchInputValue)!=-1 || body.text().indexOf(searchInputValue)!=-1){
+
+      if(reg.test(title.text()) || reg.test(body.text())){
         var ref = title.prop('id');
         if(!dict.hasOwnProperty(ref)){
           res.append({'ref':ref});
