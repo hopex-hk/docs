@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - json
 
 toc_footers:
-  - <a href='https://web.hopex.com/myaccount?page=ApiManage'>创建API Key</a>
+  - <a href='https://web.hopex.com/myaccount?page=ApiManage&lang=zh-CN'>创建API Key</a>
 
 includes:
 
