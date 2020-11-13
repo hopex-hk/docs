@@ -70,9 +70,18 @@
     if (event.keyCode === 27) searchInput.value = '';
 
     if (searchInput.value) {
-      var results = index.search(searchInput.value).filter(function(r) {
-        return r.score > 0.0001;
-      });
+      var results = []
+      if(/.*[\u4e00-\u9fa5]+.*/.test(searchInput.value)){
+        //中文查询
+        results = chineseSearch(searchInput.value);
+
+      }else{
+        results = index.search(searchInput.value).filter(function(r) {
+          return r.score > 0.0001;
+        });
+      }
+
+      
 
       if (results.length) {
         searchResults.empty();
@@ -98,5 +107,23 @@
   function unhighlight() {
     content.unhighlight(highlightOpts);
   }
+
+  function chineseSearch(searchInputValue){
+    var res = [];
+    var dict = {};
+    $('h1, h2').each(function() {
+      var title = $(this);
+      var body = title.nextUntil('h1, h2');
+      if(title.text().indexOf(searchInputValue)!=-1 || body.text().indexOf(searchInputValue)!=-1){
+        var ref = title.prop('id');
+        if(!dict.hasOwnProperty(ref)){
+          res.append({'ref':ref});
+          dict[ref] = ref;
+        }
+      }
+    });
+    return res;
+  }
+
 })();
 
