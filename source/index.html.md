@@ -106,6 +106,12 @@ REST访问的根URL：`https://api2.hopex.com/api/v1/`
 - `float`: 浮点数，主要涉及到金额和价格，建议程序中使用高精度浮点型
 - `bool`: 布尔值，主要涉及到是否暂停交易
 
+# SDK与代码示例
+
+**SDK（推荐）**
+
+[Java](https://github.com/hopex-hk/hopex_Java) | [Python3](https://github.com/hopex-hk/hopex_Python) | [C#](https://github.com/hopex-hk/hopex_CSharp) 
+
 # 常见问题
 
 ## 接入、验签相关
@@ -373,9 +379,6 @@ curl "https://api2.hopex.com/api/v1/kline?contractCode=BTCUSDT&endTime=160493760
 > Response:
 
 ```json
-# Request
-GET 
-# Response
 {
     "data": {
         "decimalplace": "1",
@@ -478,8 +481,8 @@ curl "https://api2.hopex.com/api/v1/markets"
 |pricePrecision|int| 价格精度|
 |lastestPrice|float| 最新价|
 |changePercent24h|float| 24小时涨跌幅|
-|sumAmount24h：24小时交易额, 以结算货币为单位|float|undefined|
-|sumAmount24hUSDT|float| 24小时交易额, 以USDT为单位,|
+|sumAmount24h|float|24小时交易额, 以结算货币为单位|
+|sumAmount24hUSDT|float| 24小时交易额, 以USDT为单位|
 |posVauleUSD|String| 合约未平仓量价值,以USD为单位|
 
 ## 获取Hopex成交量
@@ -810,8 +813,8 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
 |orderQuantity|String| 数量（张）|
 |leftQuantity|String| 还剩下多少没有成交|
 |fillQuantity|String| 已经成交的数量|
-|orderStatus|String| 订单状态|
-|orderStatusDisplay|String| 订单状态|
+|orderStatus|String| 订单状态 1.部分成交 2.等待成交|
+|orderStatusDisplay|String| 订单状态 1.部分成交 2.等待成交|
 |orderPrice|String| 委托价|
 |leverage|String| 杠杆倍数（2位小数）|
 |fee|String| 手续费(小数点后4位)|
@@ -917,8 +920,8 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
 |ftime|String| 完成时间|
 |orderQuantity|String| 数量（张）|
 |fillQuantity|String| 已经成交的数量|
-|orderStatus|String| 订单状态|
-|orderStatusDisplay|String| 订单状态|
+|orderStatus|String| 订单状态 1.部分成交，已撤销 2.完全成交 3.已撤销|
+|orderStatusDisplay|String| 订单状态 1.部分成交，已撤销 2.完全成交 3.已撤销|
 |orderPrice|String| 委托价|
 |leverage|String| 杠杆倍数（2位小数）|
 |fee|String| 手续费(小数点后4位)|
@@ -1741,6 +1744,7 @@ curl "https://api2.hopex.com/api/v1/account_records?page=1&limit=10"
 |orderStatus|int| 0 进行中，1 完成，2失败|
 |orderStatusD|String| 交易状态描述|
 |createdTime|String| 时间| 
+
 
 # API验签
 
