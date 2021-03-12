@@ -347,6 +347,9 @@
               </ul>
           </li>
           <li>
+            <a href="#sdk-and-demo" class="toc-h1 toc-link" data-title="SDK and Demo">SDK and Demo</a>
+          </li>
+          <li>
             <a href="#frequently-asked-questions" class="toc-h1 toc-link" data-title="Frequently Asked Questions">Frequently Asked Questions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -654,6 +657,10 @@ Some apis are response in Chinese default, if you prefer English version, please
 <li><code>float</code>: a fraction represented in decimal format, mainly used for volume and price, recommend to use high precision decimal data types in program</li>
 <li><code>bool</code>: false and true</li>
 </ul>
+<h1 id='sdk-and-demo'>SDK and Demo</h1>
+<p><strong>SDK（Suggested）</strong></p>
+
+<p><a href="https://github.com/hopex-hk/hopex_Java">Java</a> | <a href="https://github.com/hopex-hk/hopex_Python">Python3</a> | <a href="https://github.com/hopex-hk/hopex_CSharp">C#</a> </p>
 <h1 id='frequently-asked-questions'>Frequently Asked Questions</h1><h2 id='access-and-authentication'>Access And Authentication</h2><h3 id='q1-how-many-api-keys-one-user-can-apply'>Q1: How many API Keys one user can apply?</h3>
 <p>A: Every user can create 1 read API Key and 1 trade API Key</p>
 <h3 id='q2-what-39-s-difference-between-trade-api-key-and-read-api-key'>Q2: What&#39;s difference between trade API Key and read API Key?</h3>
@@ -1302,9 +1309,9 @@ Some apis are response in Chinese default, if you prefer English version, please
 <td style="text-align: left">24h Change</td>
 </tr>
 <tr>
-<td style="text-align: left">sumAmount24h：24h Trading Turnover in Settlement Currency</td>
+<td style="text-align: left">sumAmount24h</td>
 <td style="text-align: left">float</td>
-<td style="text-align: left">undefined</td>
+<td style="text-align: left">Trading Turnover in Settlement Currency</td>
 </tr>
 <tr>
 <td style="text-align: left">sumAmount24hUSDT</td>
@@ -1932,12 +1939,12 @@ Some apis are response in Chinese default, if you prefer English version, please
 <tr>
 <td style="text-align: left">orderStatus</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Order Status</td>
+<td style="text-align: left">Order Status 1.Order partially filled 2.Pending</td>
 </tr>
 <tr>
 <td style="text-align: left">orderStatusDisplay</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Order Status</td>
+<td style="text-align: left">Order Status 1.Order partially filled 2.Pending</td>
 </tr>
 <tr>
 <td style="text-align: left">orderPrice</td>
@@ -2169,12 +2176,12 @@ Some apis are response in Chinese default, if you prefer English version, please
 <tr>
 <td style="text-align: left">orderStatus</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Order Status</td>
+<td style="text-align: left">Order Status 1.Order partially filled 2.Order filled 3.Canceled</td>
 </tr>
 <tr>
 <td style="text-align: left">orderStatusDisplay</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Order Status</td>
+<td style="text-align: left">Order Status 1.Order partially filled 2.Order filled 3.Canceled</td>
 </tr>
 <tr>
 <td style="text-align: left">orderPrice</td>
