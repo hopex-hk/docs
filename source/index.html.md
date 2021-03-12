@@ -110,6 +110,12 @@ The JSON data type described in this document is defined as below:
 - `float`: a fraction represented in decimal format, mainly used for volume and price, recommend to use high precision decimal data types in program
 - `bool`: false and true
 
+# SDK and Demo
+
+**SDK（Suggested）**
+
+[Java](https://github.com/hopex-hk/hopex_Java) | [Python3](https://github.com/hopex-hk/hopex_Python) | [C#](https://github.com/hopex-hk/hopex_CSharp) 
+
 # Frequently Asked Questions
 
 ## Access And Authentication
@@ -477,7 +483,7 @@ curl "https://api2.hopex.com/api/v1/markets"
 |pricePrecision|int| Price Precision|
 |lastestPrice|float| the Latest Price|
 |changePercent24h|float| 24h Change|
-|sumAmount24h：24h Trading Turnover in Settlement Currency|float|undefined|
+|sumAmount24h|float| Trading Turnover in Settlement Currency|
 |sumAmount24hUSDT|float| 24h Trading Turnover in USDT|
 |posVauleUSD|String| Open Interest|
 
@@ -810,8 +816,8 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
 |orderQuantity|String| Quantity（contracts）|
 |leftQuantity|String| Pending Quantity|
 |fillQuantity|String| Complete Quantity|
-|orderStatus|String| Order Status|
-|orderStatusDisplay|String| Order Status|
+|orderStatus|String| Order Status 1.Order partially filled 2.Pending|
+|orderStatusDisplay|String| Order Status 1.Order partially filled 2.Pending|
 |orderPrice|String| Order Price|
 |leverage|String| Leverages（2 decimals）|
 |fee|String| Trading Fee(4 decimals)|
@@ -916,8 +922,8 @@ curl "https://api2.hopex.com/api/v1/order_info?contractCode=BTCUSDT"
 |ftime|String| Complete Time|
 |orderQuantity|String| Quantity（contracts）|
 |fillQuantity|String| Complete Quantity|
-|orderStatus|String| Order Status|
-|orderStatusDisplay|String| Order Status|
+|orderStatus|String| Order Status 1.Order partially filled 2.Order filled 3.Canceled|
+|orderStatusDisplay|String| Order Status 1.Order partially filled 2.Order filled 3.Canceled|
 |orderPrice|String| Order Price|
 |leverage|String| Leverages（2 decimals）|
 |fee|String| Trading Fee(4 decimals)|
