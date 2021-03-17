@@ -10,7 +10,7 @@ Hopex's API documentation is generated with Slate. This project is an fork of <h
 
 ## Repo Structure and Overall Workflow
 
-Hopex currently supports two languages of API documents (English, Chinese), so we have a total of two versions of API documents sit in two branches: v1_en, v1_cn. To access the web page of a specific version you can visit <https://hopex.github.io/api_doc/contract/{version}/{language}>, e.g. for v1 english version visit https://hopex.github.io/api_doc/contract/v1/en.
+Hopex currently supports two languages of API documents (English, Chinese), so we have a total of two versions of API documents sit in two branches: v1_en, v1_cn. To access the web page of a specific version you can visit <https://hopex-hk.github.io/docs/contract/{version}/{language}>, e.g. for v1 english version visit https://hopex-hk.github.io/docs/contract/v1/en.
 
 ### *Recommended way to make a change by CI*
 
