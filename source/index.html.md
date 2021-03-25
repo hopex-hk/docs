@@ -110,7 +110,7 @@ REST访问的根URL：`https://api2.hopex.com/api/v1/`
 
 **SDK（推荐）**
 
-[Java](https://github.com/hopex-hk/hopex_Java) | [Python3](https://github.com/hopex-hk/hopex_Python) | [C#](https://github.com/hopex-hk/hopex_CSharp) 
+[Java](https://github.com/hopex-hk/hopex_Java) | [Python3](https://github.com/hopex-hk/hopex_Python) | [C#](https://github.com/hopex-hk/hopex_CSharp) | [Go](https://github.com/hopex-hk/go_sdk)
 
 # 常见问题
 
