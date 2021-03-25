@@ -114,7 +114,7 @@ The JSON data type described in this document is defined as below:
 
 **SDK（Suggested）**
 
-[Java](https://github.com/hopex-hk/hopex_Java) | [Python3](https://github.com/hopex-hk/hopex_Python) | [C#](https://github.com/hopex-hk/hopex_CSharp) 
+[Java](https://github.com/hopex-hk/hopex_Java) | [Python3](https://github.com/hopex-hk/hopex_Python) | [C#](https://github.com/hopex-hk/hopex_CSharp) | [Go](https://github.com/hopex-hk/go_sdk)
 
 # Frequently Asked Questions
 
